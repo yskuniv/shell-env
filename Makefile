@@ -10,3 +10,6 @@ ${TARGET_DIR}/.rbenv:
 
 ${TARGET_DIR}/.rbenv/plugins/ruby-build: ${TARGET_DIR}/.rbenv
 	git clone https://github.com/rbenv/ruby-build.git $@
+
+${TARGET_DIR}/.pyenv:
+	git clone https://github.com/pyenv/pyenv.git $@
