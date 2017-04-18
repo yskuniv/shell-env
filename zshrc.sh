@@ -28,3 +28,10 @@ zstyle ':vcs_info:*'     formats       '%F{blue}(%s)%f-%c%u%F{magenta}[%b]%f'
 zstyle ':vcs_info:*'     actionformats '%F{blue}(%s)%f-%F{magenta}[%b|%a]%f'
 precmd () { vcs_info }
 RPROMPT='%B${vcs_info_msg_0_}%b'
+
+# history
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=10000
+setopt hist_ignore_dups
+setopt EXTENDED_HISTORY
