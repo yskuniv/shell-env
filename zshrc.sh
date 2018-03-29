@@ -15,6 +15,7 @@ SHELL_ENV=$HOME/shell-env
 source $SHELL_ENV/alias.sh
 source $SHELL_ENV/rbenv.sh
 source $SHELL_ENV/pyenv.sh
+source $SHELL_ENV/ssh-agent.sh
 
 PROMPT='%B%n@%m:%F{cyan}[%~]%f%b
 %# '
