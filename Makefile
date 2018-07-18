@@ -4,6 +4,9 @@ bashrc: ${HOME}/.bashrc
 .PHONY: zshrc
 zshrc: ${HOME}/.zshrc
 
+.PHONY: iterm2_shell_integration.zsh
+iterm2_shell_integration.zsh: ${HOME}/.iterm2_shell_integration.zsh
+
 .PHONY: zgen
 zgen: ${HOME}/.zgen
 
@@ -21,6 +24,9 @@ ${HOME}/.bashrc:
 ${HOME}/.zshrc:
 	test ! -f $@
 	./gen-rcfile.sh zsh > $@
+
+${HOME}/.iterm2_shell_integration.zsh:
+	curl -L https://iterm2.com/shell_integration/zsh -o $@
 
 ${HOME}/.zgen:
 	git clone https://github.com/tarjoilija/zgen.git $@
