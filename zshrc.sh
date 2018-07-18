@@ -1,18 +1,7 @@
 SHELL_ENV_DIR=$(cd `dirname $0` && pwd -P)
 
 
-# load zgen
-source "${HOME}/.zgen/zgen.zsh"
-
-# if the init scipt doesn't exist
-if ! zgen saved; then
-    # specify plugins here
-    zgen load zsh-users/zsh-completions
-    zgen load zsh-users/zsh-syntax-highlighting
-
-    # generate the init script from plugins above
-    zgen save
-fi
+source $SHELL_ENV_DIR/zgen.sh
 
 source $SHELL_ENV_DIR/alias.sh
 source $SHELL_ENV_DIR/rbenv.sh
