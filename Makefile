@@ -1,3 +1,13 @@
+.PHONY: zgen
+zgen: ${HOME}/.zgen
+
+.PHONY: rbenv
+rbenv: ${HOME}/.rbenv
+
+.PHONY: pyenv
+pyenv: ${HOME}/.pyenv
+
+
 ${HOME}/.zgen:
 	git clone https://github.com/tarjoilija/zgen.git $@
 
