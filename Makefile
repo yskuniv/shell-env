@@ -14,11 +14,11 @@ rbenv: ${HOME}/.rbenv
 pyenv: ${HOME}/.pyenv
 
 
-${HOME}/.bashrc: bashrc.sh
+${HOME}/.bashrc:
 	test ! -f $@
 	./gen-rcfile.sh bash > $@
 
-${HOME}/.zshrc: zshrc.sh
+${HOME}/.zshrc:
 	test ! -f $@
 	./gen-rcfile.sh zsh > $@
 
