@@ -1,15 +1,13 @@
-TARGET_DIR	= ${HOME}
-
 default:
 
-${TARGET_DIR}/.zgen:
+${HOME}/.zgen:
 	git clone https://github.com/tarjoilija/zgen.git $@
 
-${TARGET_DIR}/.rbenv:
+${HOME}/.rbenv:
 	git clone https://github.com/rbenv/rbenv.git $@
 
-${TARGET_DIR}/.rbenv/plugins/ruby-build: ${TARGET_DIR}/.rbenv
+${HOME}/.rbenv/plugins/ruby-build: ${HOME}/.rbenv
 	git clone https://github.com/rbenv/ruby-build.git $@
 
-${TARGET_DIR}/.pyenv:
+${HOME}/.pyenv:
 	git clone https://github.com/pyenv/pyenv.git $@
