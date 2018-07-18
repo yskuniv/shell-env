@@ -1,3 +1,6 @@
+SHELL_ENV_DIR=$(cd `dirname $0` && pwd -P)
+
+
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
@@ -11,11 +14,10 @@ if ! zgen saved; then
     zgen save
 fi
 
-SHELL_ENV=$HOME/shell-env
-source $SHELL_ENV/alias.sh
-source $SHELL_ENV/rbenv.sh
-source $SHELL_ENV/pyenv.sh
-source $SHELL_ENV/ssh-agent.sh
+source $SHELL_ENV_DIR/alias.sh
+source $SHELL_ENV_DIR/rbenv.sh
+source $SHELL_ENV_DIR/pyenv.sh
+source $SHELL_ENV_DIR/ssh-agent.sh
 
 PROMPT='%B%n@%m:%F{cyan}[%~]%f%b
 %# '
