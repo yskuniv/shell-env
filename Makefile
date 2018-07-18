@@ -1,15 +1,35 @@
-TARGET_DIR	= ${HOME}
+.PHONY: bashrc
+bashrc: ${HOME}/.bashrc
 
-default:
+.PHONY: zshrc
+zshrc: ${HOME}/.zshrc
 
-${TARGET_DIR}/.zgen:
+.PHONY: zgen
+zgen: ${HOME}/.zgen
+
+.PHONY: rbenv
+rbenv: ${HOME}/.rbenv
+
+.PHONY: pyenv
+pyenv: ${HOME}/.pyenv
+
+
+${HOME}/.bashrc: bashrc.sh
+	test ! -f $@
+	./gen-rcfile.sh bash > $@
+
+${HOME}/.zshrc: zshrc.sh
+	test ! -f $@
+	./gen-rcfile.sh zsh > $@
+
+${HOME}/.zgen:
 	git clone https://github.com/tarjoilija/zgen.git $@
 
-${TARGET_DIR}/.rbenv:
+${HOME}/.rbenv:
 	git clone https://github.com/rbenv/rbenv.git $@
 
-${TARGET_DIR}/.rbenv/plugins/ruby-build: ${TARGET_DIR}/.rbenv
+${HOME}/.rbenv/plugins/ruby-build: ${HOME}/.rbenv
 	git clone https://github.com/rbenv/ruby-build.git $@
 
-${TARGET_DIR}/.pyenv:
+${HOME}/.pyenv:
 	git clone https://github.com/pyenv/pyenv.git $@
