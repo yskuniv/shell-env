@@ -1,36 +1,10 @@
 SHELL_ENV_DIR=$(cd `dirname $0` && pwd -P)
 
 
-# load zgen
-source "${HOME}/.zgen/zgen.zsh"
+source $SHELL_ENV_DIR/common.sh
 
-# if the init scipt doesn't exist
-if ! zgen saved; then
-    # specify plugins here
-    zgen load zsh-users/zsh-completions
-    zgen load zsh-users/zsh-syntax-highlighting
-
-    # generate the init script from plugins above
-    zgen save
-fi
-
-source $SHELL_ENV_DIR/alias.sh
-source $SHELL_ENV_DIR/rbenv.sh
-source $SHELL_ENV_DIR/pyenv.sh
-source $SHELL_ENV_DIR/ssh-agent.sh
-
-PROMPT='%B%n@%m:%F{cyan}[%~]%f%b
-%# '
-
-autoload -Uz vcs_info
-setopt prompt_subst
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr     '%F{yellow}!%f'
-zstyle ':vcs_info:git:*' unstagedstr   '%F{red}+%f'
-zstyle ':vcs_info:*'     formats       '%F{blue}(%s)%f-%c%u%F{magenta}[%b]%f'
-zstyle ':vcs_info:*'     actionformats '%F{blue}(%s)%f-%F{magenta}[%b|%a]%f'
-precmd () { vcs_info }
-RPROMPT='%B${vcs_info_msg_0_}%b'
+source $SHELL_ENV_DIR/zsh/zgen.sh
+source $SHELL_ENV_DIR/zsh/prompt.sh
 
 # history
 export HISTFILE=${HOME}/.zsh_history
