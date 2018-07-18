@@ -1,5 +1,3 @@
-default:
-
 ${HOME}/.zgen:
 	git clone https://github.com/tarjoilija/zgen.git $@
 
