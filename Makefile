@@ -18,10 +18,10 @@ pyenv: ${HOME}/.pyenv
 
 
 ${HOME}/.bashrc:
-	./gen-rcfile.sh bash > $@
+	./bin/gen-rcfile.sh bash > $@
 
 ${HOME}/.zshrc:
-	./gen-rcfile.sh zsh > $@
+	./bin/gen-rcfile.sh zsh > $@
 
 ${HOME}/.zgen:
 	git clone https://github.com/tarjoilija/zgen.git $@
