@@ -4,32 +4,30 @@ bashrc: ${HOME}/.bashrc
 .PHONY: zshrc
 zshrc: ${HOME}/.zshrc
 
-.PHONY: iterm2_shell_integration.zsh
-iterm2_shell_integration.zsh: ${HOME}/.iterm2_shell_integration.zsh
-
 .PHONY: zgen
 zgen: ${HOME}/.zgen
 
+.PHONY: iterm2_shell_integration.zsh
+iterm2_shell_integration.zsh: ${HOME}/.iterm2_shell_integration.zsh
+
 .PHONY: rbenv
-rbenv: ${HOME}/.rbenv
+rbenv: ${HOME}/.rbenv ${HOME}/.rbenv/plugins/ruby-build
 
 .PHONY: pyenv
 pyenv: ${HOME}/.pyenv
 
 
 ${HOME}/.bashrc:
-	test ! -f $@
-	./gen-rcfile.sh bash > $@
+	./bin/gen-rcfile.sh bash > $@
 
 ${HOME}/.zshrc:
-	test ! -f $@
-	./gen-rcfile.sh zsh > $@
-
-${HOME}/.iterm2_shell_integration.zsh:
-	curl -L https://iterm2.com/shell_integration/zsh -o $@
+	./bin/gen-rcfile.sh zsh > $@
 
 ${HOME}/.zgen:
 	git clone https://github.com/tarjoilija/zgen.git $@
+
+${HOME}/.iterm2_shell_integration.zsh:
+	curl -L https://iterm2.com/shell_integration/zsh -o $@
 
 ${HOME}/.rbenv:
 	git clone https://github.com/rbenv/rbenv.git $@
