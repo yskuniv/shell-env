@@ -11,7 +11,7 @@ zgen: ${HOME}/.zgen
 iterm2_shell_integration.zsh: ${HOME}/.iterm2_shell_integration.zsh
 
 .PHONY: rbenv
-rbenv: ${HOME}/.rbenv
+rbenv: ${HOME}/.rbenv ${HOME}/.rbenv/plugins/ruby-build
 
 .PHONY: pyenv
 pyenv: ${HOME}/.pyenv
