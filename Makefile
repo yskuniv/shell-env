@@ -18,11 +18,9 @@ pyenv: ${HOME}/.pyenv
 
 
 ${HOME}/.bashrc:
-	test ! -f $@
 	./gen-rcfile.sh bash > $@
 
 ${HOME}/.zshrc:
-	test ! -f $@
 	./gen-rcfile.sh zsh > $@
 
 ${HOME}/.zgen:
