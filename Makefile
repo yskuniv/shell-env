@@ -1,9 +1,3 @@
-.PHONY: bashrc
-bashrc: ${HOME}/.bashrc
-
-.PHONY: zshrc
-zshrc: ${HOME}/.zshrc
-
 .PHONY: zgen
 zgen: ${HOME}/.zgen
 
@@ -16,12 +10,6 @@ rbenv: ${HOME}/.rbenv ${HOME}/.rbenv/plugins/ruby-build
 .PHONY: pyenv
 pyenv: ${HOME}/.pyenv
 
-
-${HOME}/.bashrc:
-	./bin/gen-rcfile.sh bash > $@
-
-${HOME}/.zshrc:
-	./bin/gen-rcfile.sh zsh > $@
 
 ${HOME}/.zgen:
 	git clone https://github.com/tarjoilija/zgen.git $@
