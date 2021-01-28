@@ -1,1 +1,1 @@
-source $SHELL_ENV_DIR/common/init.sh
+source $SHELL_ENV_ROOT/common/init.sh
