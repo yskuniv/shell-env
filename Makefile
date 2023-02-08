@@ -10,6 +10,9 @@ rbenv: ${HOME}/.rbenv ${HOME}/.rbenv/plugins/ruby-build
 .PHONY: pyenv
 pyenv: ${HOME}/.pyenv
 
+.PHONY: nodenv
+nodenv: ${HOME}/.nodenv ${HOME}/.nodenv/plugins/node-build
+
 
 ${HOME}/.zgen:
 	git clone https://github.com/tarjoilija/zgen.git $@
@@ -25,3 +28,9 @@ ${HOME}/.rbenv/plugins/ruby-build: ${HOME}/.rbenv
 
 ${HOME}/.pyenv:
 	git clone https://github.com/pyenv/pyenv.git $@
+
+${HOME}/.nodenv:
+	git clone https://github.com/nodenv/nodenv.git $@
+
+${HOME}/.nodenv/plugins/node-build: ${HOME}/.nodenv
+	git clone https://github.com/nodenv/node-build.git $@
