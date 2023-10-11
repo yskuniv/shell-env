@@ -25,4 +25,6 @@ SHELL_ENV="${HOME}/env/shell-env"
 
 source "${SHELL_ENV}/zshrc.sh"
 EOF
+
+    echo "${HOME}/.zshrc is created."
 fi

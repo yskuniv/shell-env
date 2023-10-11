@@ -25,4 +25,6 @@ SHELL_ENV="${HOME}/env/shell-env"
 
 source "${SHELL_ENV}/bashrc.sh"
 EOF
+
+    echo "${HOME}/.bashrc is created."
 fi
